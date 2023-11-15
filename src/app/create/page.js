@@ -30,7 +30,7 @@ export default function UserForm() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('https://tinyurl.com/yyf7djc7/api/users', formData);
+      const response = await axios.post('/api/users', formData);
 
       if (response.status === 201) {
         router.push('/');
@@ -127,7 +127,7 @@ export default function UserForm() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+              className="bg-green-700 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
             >
               {isLoading ? 'Submitting...' : 'Submit'}
             </button>

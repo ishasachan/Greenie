@@ -13,7 +13,7 @@ export default function UserTable() {
   useEffect(() => {
     async function fetchUserData() {
       try {
-        const response = await axios.get('https://tinyurl.com/yyf7djc7/api/users');
+        const response = await axios.get('/api/users');
         console.log(response.data);
         setUserData(response.data);
         setIsLoading(false);
