@@ -87,7 +87,7 @@ export default function UserTable() {
             <h2 className="text-xl font-bold mb-4">Generate Report</h2>
             <p>{`Generate report for ${selectedUser.username}`}</p>
             <button
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+              className="bg-blue-500 hover:bg-green-600 text-white px-4 py-2 rounded mt-4"
               onClick={() => generateReport(selectedUser.id)}
             >
               Generate
