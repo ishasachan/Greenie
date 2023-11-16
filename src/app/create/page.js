@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from 'react';
-import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { FaEyeSlash, FaEye } from "react-icons/fa";
+import { FaEyeSlash, FaEye } from 'react-icons/fa';
+import { toast, Toaster } from 'react-hot-toast';
+import axios from 'axios';
 
 export default function UserForm() {
   const router = useRouter();
@@ -33,12 +34,17 @@ export default function UserForm() {
       const response = await axios.post('/api/users', formData);
 
       if (response.status === 201) {
-        router.push('/');
+        toast.success('User created successfully');
+        setTimeout(() => {
+          router.push('/');
+        }, 2000);
       } else {
         console.error('Submission failed:', response.data);
+        toast.error('Submission failed');
       }
     } catch (error) {
       console.error('Submission error:', error);
+      toast.error('Submission error');
     } finally {
       setIsLoading(false);
     }
@@ -49,7 +55,7 @@ export default function UserForm() {
   };
 
   return (
-    <div className="flex h-screen max-w-s mx-auto lg:max-w-lg">
+    <div className="flex max-w-s mx-auto lg:max-w-lg">
       <main className="flex-grow">
         <div className="bg-white rounded shadow p-8">
           <h2 className="text-2xl font-bold mb-6">Create a User</h2>
@@ -134,6 +140,7 @@ export default function UserForm() {
           </form>
         </div>
       </main>
+      <Toaster />
     </div>
   );
 }
