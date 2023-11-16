@@ -1,9 +1,9 @@
 # Documentation
 
-The project is build under the requirement of the Assignment given by Greenie.
+The project is build under the requirement of the Assignment given by Greenie. You find the Live Hosted Webiste [here](https://greenie-isha.vercel.app/)
 
 ## Running the Application Locally
-1. In order to run the application first we have to make sure we have node and git install.
+1. In order to run the application first we have to make sure we have latest versions of node and git install.
 You can Download node simply by visiting https://nodejs.org/en and git from https://git-scm.com
 
 2. We can the node installation by running the commands
@@ -15,6 +15,9 @@ git --version
 3. Now we have to clone the github repository 
 ```bash
 git clone https://github.com/ishasachan/Greenie
+```
+```bash
+cd Greenie
 ```
 
 4. Now we have to install the packages needed by this application
