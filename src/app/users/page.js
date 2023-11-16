@@ -24,21 +24,6 @@ export default function UserTable() {
   
     fetchUserData();
   }, []);
-  
-  // Function to generate a random date
-  const generateRandomDate = () => {
-    const startDate = new Date(2019, 0, 1); // Start date (e.g., Jan 1, 2019)
-    const endDate = new Date(); // Current date
-  
-    const randomDate = new Date(startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime()));
-  
-    // Format the date as needed (e.g., YYYY-MM-DD)
-    const formattedDate = `${randomDate.getFullYear()}-${(randomDate.getMonth() + 1)
-      .toString()
-      .padStart(2, '0')}-${randomDate.getDate().toString().padStart(2, '0')}`;
-  
-    return formattedDate;
-  };
 
   // Filter user based on search term
   const filteredUsers = userData.filter((user) =>
@@ -50,7 +35,6 @@ export default function UserTable() {
   // Function to handle click on user
   const handleUserClick = (user) => {
     setSelectedUser(user);
-    // Code to open modal here
   };
 
   const generateReport = (userId) => {

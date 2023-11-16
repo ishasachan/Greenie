@@ -1,13 +1,15 @@
-import { PrismaClient } from '@prisma/client/edge'
+import { PrismaClient } from '@prisma/client'
 import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
+// Function to Get Users
 export async function GET(request: Request) {
   const users = await prisma.user.findMany();
   return NextResponse.json(users);
 }
 
+// Function to Create Users
 export async function POST(request: Request) {
   try {
     const {username, email, phone} = await request.json();
